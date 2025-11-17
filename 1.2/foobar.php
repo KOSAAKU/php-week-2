@@ -1,15 +1,19 @@
 <?php
-
-function foobar($nb) 
+function foobar($nb = 1) 
 {
+    if($nb > 100) return;
+
     if ($nb % 3 == 0 && $nb % 5 == 0)
-        return "foobar"; 
+        echo "foobar<br>";
     else if ($nb % 3 == 0)
-        return "foo";
+        echo "foo<br>";
     else if ($nb % 5 == 0)
-        return "bar";
+        echo "bar<br>";
     else
-        return $nb;
+        echo $nb . "<br>";
+
+    foobar($nb + 1);
 }
 
-echo foobar(14);
+foobar();
+?>
